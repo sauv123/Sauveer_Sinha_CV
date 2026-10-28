@@ -122,7 +122,7 @@ export const STICKY_NOTES_DATA = [
     stickerSubText: '#DCFAEC',
     angleDeg: -1.5,
     title: 'I’ve never been just one thing.',
-    body: 'Print and media, visual design, UX, 3D, emerging tech. My path hasn’t been a straight line, and I quite like that. Each discipline gives me another way to look at a problem.',
+    body: 'UX, product, engineering, art direction, 3D, emerging tech. My path hasn’t been a straight line, and I quite like that. Each discipline gives me another way to look at a problem.',
   },
   {
     id: 'sticker-05',
@@ -512,49 +512,96 @@ function drawPersonalArtefact(ctx, note, cx, cy) {
     ctx.lineTo(cx3, cy3 + r);
     ctx.stroke();
   } else if (type === 'print-to-ux') {
-    // 3 Fanned Pantone/CMYK Print Swatch Cards + UX Vector Bezier Curve & Anchor Handles
-    const cards = [
-      { angle: -0.34, color: '#00B4D8', x: -38, y: 6 },
-      { angle: -0.06, color: '#F72585', x: -12, y: 2 },
-      { angle: 0.22, color: '#FFBE0B', x: 16, y: 6 },
-    ];
+    // Multi-disciplinary Craft Collage: UX Wireframe Card + Engineering Code Node </> + Art Direction Swatch & Vector Bezier Curve
+    // 1. Left Card: UX / Product Wireframe Interface Card
+    ctx.save();
+    ctx.translate(-38, 4);
+    ctx.rotate(-0.22);
+    ctx.fillStyle = '#FFFDF9';
+    ctx.beginPath();
+    ctx.roundRect(-28, -40, 56, 74, 7);
+    ctx.fill();
+    ctx.shadowColor = 'transparent';
+    // Header bar
+    ctx.fillStyle = '#38BDF8';
+    ctx.beginPath();
+    ctx.roundRect(-22, -34, 44, 14, 4);
+    ctx.fill();
+    // Wireframe blocks
+    ctx.fillStyle = '#18181B';
+    ctx.fillRect(-22, -14, 26, 6);
+    ctx.fillStyle = '#A1A1AA';
+    ctx.fillRect(-22, -4, 38, 5);
+    ctx.fillStyle = '#F43F5E';
+    ctx.beginPath();
+    ctx.roundRect(-22, 7, 44, 18, 4);
+    ctx.fill();
+    ctx.restore();
 
-    for (const c of cards) {
-      ctx.save();
-      ctx.translate(c.x, c.y);
-      ctx.rotate(c.angle);
-      // White swatch card
-      ctx.fillStyle = '#FFFDF9';
-      ctx.beginPath();
-      ctx.roundRect(-24, -42, 48, 76, 6);
-      ctx.fill();
-      ctx.shadowColor = 'transparent';
-      // Color chip
-      ctx.fillStyle = c.color;
-      ctx.beginPath();
-      ctx.roundRect(-19, -37, 38, 46, 3);
-      ctx.fill();
-      // Print registration lines at bottom of swatch
-      ctx.fillStyle = '#18181B';
-      ctx.fillRect(-19, 15, 24, 4);
-      ctx.fillStyle = '#71717A';
-      ctx.fillRect(-19, 22, 16, 3);
-      ctx.restore();
-    }
+    // 2. Center Badge: Engineering Code Terminal Card (`</>`)
+    ctx.save();
+    ctx.translate(2, -4);
+    ctx.rotate(0.05);
+    ctx.fillStyle = '#18181B';
+    ctx.beginPath();
+    ctx.roundRect(-28, -36, 56, 68, 8);
+    ctx.fill();
+    ctx.shadowColor = 'transparent';
+    // Window dots
+    ctx.fillStyle = '#F43F5E';
+    ctx.beginPath();
+    ctx.arc(-18, -26, 3, 0, Math.PI * 2);
+    ctx.fill();
+    ctx.fillStyle = '#FBBF24';
+    ctx.beginPath();
+    ctx.arc(-10, -26, 3, 0, Math.PI * 2);
+    ctx.fill();
+    ctx.fillStyle = '#10B981';
+    ctx.beginPath();
+    ctx.arc(-2, -26, 3, 0, Math.PI * 2);
+    ctx.fill();
+    // Crisp `</>` engineering symbol
+    ctx.font = '800 20px -apple-system, BlinkMacSystemFont, "Plus Jakarta Sans", monospace';
+    ctx.fillStyle = '#38BDF8';
+    ctx.textAlign = 'center';
+    ctx.textBaseline = 'middle';
+    ctx.fillText('</>', 0, 2);
+    ctx.restore();
+
+    // 3. Right Card: Art Direction Color Swatch & Typography Card
+    ctx.save();
+    ctx.translate(38, 6);
+    ctx.rotate(0.24);
+    ctx.fillStyle = '#FFFDF9';
+    ctx.beginPath();
+    ctx.roundRect(-24, -38, 48, 70, 7);
+    ctx.fill();
+    ctx.shadowColor = 'transparent';
+    ctx.fillStyle = '#FFBE0B';
+    ctx.beginPath();
+    ctx.roundRect(-19, -33, 38, 40, 4);
+    ctx.fill();
+    ctx.font = '800 16px -apple-system, BlinkMacSystemFont, "Plus Jakarta Sans", serif';
+    ctx.fillStyle = '#18181B';
+    ctx.textAlign = 'center';
+    ctx.fillText('Aa', 0, -12);
+    ctx.fillStyle = '#18181B';
+    ctx.fillRect(-19, 13, 24, 4);
+    ctx.restore();
 
     ctx.shadowColor = 'transparent';
 
-    // Sweeping UX / AI Vector Bezier Path with control handles across the right side
+    // 4. Sweeping Art-Direction / UX Vector Bezier Path connecting all disciplines
     ctx.strokeStyle = '#FFFDF9';
     ctx.lineWidth = 4;
     ctx.beginPath();
-    ctx.moveTo(-54, 24);
-    ctx.bezierCurveTo(-10, -44, 25, 38, 66, -18);
+    ctx.moveTo(-58, 24);
+    ctx.bezierCurveTo(-12, -42, 24, 38, 66, -18);
     ctx.stroke();
 
     // Tangent handle line
     ctx.strokeStyle = '#FDE047';
-    ctx.lineWidth = 2.2;
+    ctx.lineWidth = 2.4;
     ctx.beginPath();
     ctx.moveTo(42, 6);
     ctx.lineTo(74, -26);
@@ -562,7 +609,7 @@ function drawPersonalArtefact(ctx, note, cx, cy) {
 
     // Square vector anchor points
     const anchors = [
-      { x: -54, y: 24 },
+      { x: -58, y: 24 },
       { x: 66, y: -18 },
     ];
     for (const a of anchors) {
@@ -2003,14 +2050,16 @@ class InteractivePaperResumeApp {
   }
 
   _bindEvents() {
-    // Unlock Web Audio automatically on the very first user gesture anywhere in the window
+    // Unlock Web Audio automatically in capture phase on the very first user gesture anywhere in the window
     const unlockAudio = () => {
       this.soundEngine.ensureContext();
     };
-    window.addEventListener('pointerdown', unlockAudio, { passive: true });
-    window.addEventListener('wheel', unlockAudio, { passive: true });
-    window.addEventListener('touchstart', unlockAudio, { passive: true });
-    window.addEventListener('keydown', unlockAudio, { passive: true });
+    window.addEventListener('pointerdown', unlockAudio, { capture: true, passive: true });
+    window.addEventListener('mousedown', unlockAudio, { capture: true, passive: true });
+    window.addEventListener('click', unlockAudio, { capture: true, passive: true });
+    window.addEventListener('wheel', unlockAudio, { capture: true, passive: true });
+    window.addEventListener('touchstart', unlockAudio, { capture: true, passive: true });
+    window.addEventListener('keydown', unlockAudio, { capture: true, passive: true });
 
     // 1. Pointer Down (Mouse & Multi-Touch)
     this.canvas.addEventListener('pointerdown', (e) => {
@@ -2224,8 +2273,9 @@ class InteractivePaperResumeApp {
         const maxHoverDist = zone.isCorner ? 1.65 : 1.05;
         if (zone.dist < maxHoverDist) {
           const proximity = 1.0 - zone.dist / maxHoverDist;
-          if (this.progress < 0.025) {
+          if (this.progress < 0.020) {
             this.curlAngle = zone.defaultAngle;
+            this.soundEngine.triggerCornerBeckon(Math.cos(zone.defaultAngle) * 0.55);
           }
           this.targetCurlAngle = zone.defaultAngle;
           this.targetProgress = 0.018 + (zone.isCorner ? 0.038 : 0.025) * proximity;
@@ -2552,6 +2602,7 @@ class InteractivePaperResumeApp {
         this.paperUniforms.uIsBackSideUp.value = this.isBackSideUp ? 1.0 : 0.0;
         this.targetZoomLevel = 1.0;
         this.targetPanOffset.set(0, 0);
+        this.soundEngine.triggerStickyStick(-Math.cos(this.curlAngle) * 0.45);
         this._updateSideBadge();
         this._announce(
           this.isBackSideUp
@@ -2605,10 +2656,10 @@ class InteractivePaperResumeApp {
       }
     }
 
-    // 4. Synchronize spatialized paper Foley sound
+    // 4. Synchronize spatialized paper Foley sound during both manual drag and full 180-degree turns
     const instSpeed = Math.abs(this.progress - prevProgress) / dt;
     const creasePan = Math.cos(this.curlAngle) * (1.0 - 2.0 * this.progress) * 0.75;
-    if (this.isDragging) {
+    if (this.isDragging || this.isAutoTurning) {
       this.soundEngine.updateMovement(Math.min(1.0, instSpeed * 0.72), this.progress, creasePan);
     } else {
       this.soundEngine.stopMovement();
