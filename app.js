@@ -1,5 +1,5 @@
 import * as THREE from './vendor/three.module.js';
-import { PaperSoundEngine } from './paper-audio.js';
+import { PaperSoundEngine } from './paper-audio.js?v=8';
 
 /**
  * Interactive 3D Physical Paper Resume with 6 Die-Cut Colored Shaped Personality Stickers
