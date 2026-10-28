@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=no">
+  <title>Sauveer Sinha — UX &amp; Product Designer | Interactive 3D Resume</title>
+  <meta name="description" content="Peel any corner to flip Sauveer Sinha's interactive 3D resume — formal UX & Product Design CV on the front, and 6 personal artefact stickers on the back.">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Sauveer Sinha — Interactive 3D Resume (+ Behind the Resume)">
+  <meta property="og:description" content="Peel any corner to flip between my formal UX & Product Design CV and the 6 personal artefact stickers on the back.">
+  <meta property="og:image" content="https://sauv123.github.io/paper-resume/assets/og-preview.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Sauveer Sinha — Interactive 3D Resume (+ Behind the Resume)">
+  <meta name="twitter:description" content="Peel any corner to flip between my formal UX & Product Design CV and the 6 personal artefact stickers on the back.">
+  <meta name="twitter:image" content="https://sauv123.github.io/paper-resume/assets/og-preview.png">
+  <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+  <header class="studio-header">
+    <a href="#resume-content" class="skip-link visually-hidden">Skip to accessible resume text</a>
+    <div class="header-inner">
+      <div class="sheet-meta">
+        <span class="status-dot" id="status-dot" aria-hidden="true"></span>
+        <span class="sheet-title">Sauveer Sinha</span>
+        <span class="meta-sep" aria-hidden="true">/</span>
+        <span id="sheet-side-badge" class="side-badge" data-side="front">Front · Original Resume</span>
+      </div>
+      <div id="interaction-hint" class="interaction-hint" aria-hidden="true">
+        Peel any corner or edge to flip · Scroll or pinch to zoom
+      </div>
+    </div>
+  </header>
+
+  <main id="stage-container" class="stage-container">
+    <!-- 3D Physical Paper & Personality Stickers Stage -->
+    <canvas id="paper-canvas" aria-label="Interactive 3D physical paper sheet displaying Sauveer Sinha's resume on the front and 6 colorful shaped personality stickers on the back. Drag any corner or side to turn the sheet over, or pinch and scroll to zoom and pan."></canvas>
+
+    <!-- Delayed 2.5s Side Intimation inviting the viewer to turn the resume over -->
+    <aside id="turn-intimation" class="turn-intimation" hidden aria-live="polite">
+      <button type="button" id="btn-intimation-flip" class="intimation-card" aria-label="Turn the resume over to know the human side of Sauveer Sinha">
+        <span class="intimation-arrow-wrap" aria-hidden="true">
+          <svg class="intimation-curved-arrow" viewBox="0 0 44 32" width="38" height="28" fill="none">
+            <path d="M40 24C28 25 16 20 8 8" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/>
+            <path d="M15 7L7.5 7.5L8.5 15" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </span>
+        <span class="intimation-eyebrow">✦ BEHIND THE RESUME</span>
+        <span class="intimation-title">Turn over to know the human side of my resume too</span>
+        <span class="intimation-cta">
+          Peel any corner or click to flip
+          <svg aria-hidden="true" viewBox="0 0 16 16" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M3.5 8h9M8.5 4l4 4-4 4"/>
+          </svg>
+        </span>
+      </button>
+    </aside>
+
+    <!-- Floating tooltip for interactive header links and personality stickers -->
+    <div id="link-tooltip" class="link-tooltip" hidden></div>
+
+    <!-- Centralized polite live region for assistive technology announcements -->
+    <div id="sr-status" class="visually-hidden" aria-live="polite" aria-atomic="true"></div>
+
+    <!-- Visually hidden 100% verbatim semantic HTML mirror of the resume + human-side personality stickers for screen readers -->
+    <article id="resume-content" class="visually-hidden">
+      <h1 tabindex="-1">SAUVEER SINHA | UX &amp; PRODUCT DESIGNER</h1>
+      <p>
+        Milan, Italy +39 350 812 4320 ·
+        <a href="mailto:sauveersinha@gmail.com">sauveersinha@gmail.com</a> ·
+        <a href="https://www.sauveer.com">www.sauveer.com</a> ·
+        <a href="https://linkedin.com/in/sauveer">linkedin.com/in/sauveer</a>
+      </p>
+
+      <section>
+        <h2>ABOUT</h2>
+        <p>Product Designer focused on AI-native products, complex workflows, and human-centred systems. I turn ambiguous problems into clear, scalable experiences across SaaS and consumer products, combining UX strategy, interaction design, and visual direction.</p>
+      </section>
+
+      <section>
+        <h2>EDUCATION</h2>
+        <p><strong>NABA — Nuova Accademia di Belle Arti, Milan) MA User Experience Design</strong> · Sep 2024 – Oct 2026 (Expected)<br>
+        Service innovation, systems thinking, emerging technologies, human-centred design</p>
+        <p><strong>Manipal Institute of Technology B.Tech Print &amp; Media Engineering</strong> · Jun 2019 – Jun 2023<br>
+        Design, visual communication, production systems and technology</p>
+      </section>
+
+      <section>
+        <h2>SKILLS</h2>
+        <p><strong>Core Skills:</strong> Product Strategy · Interaction Design · Information Architecture · Design Systems · Art Direction · Cognitive Psychology</p>
+        <p><strong>AI-Native Design:</strong> Conversational UI · UX for LLM Outputs · AI Agents &amp; Workflows · AI-Native Product Design · Prototyping</p>
+        <p><strong>Tools:</strong> Figma · Framer · Adobe CC · Miro · Lovable · Antigravity · Claude</p>
+        <p><strong>Research:</strong> User Research · Usability Testing · Competitive Analysis · A/B Testing</p>
+      </section>
+
+      <section>
+        <h2>SELECTED HIGHLIGHTS</h2>
+        <ul>
+          <li>Drove 88% growth in user engagement through qualitative research UI redesign at e-tailize</li>
+          <li>Won 3rd Place — NCA Design Awards and Member of AI Academic Integrity Committee at NABA Milan</li>
+          <li>Designed and shipped 3 independent digital products, spanning AI-powered productivity, macOS software</li>
+          <li>/trace: Selected for STEP Project FuturAbility District, Milano Digital Week 2026: an interactive installation exploring blockchain through live data, visualisation and generative interaction.</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>PROFESSIONAL EXPERIENCE</h2>
+        <h3>Hobbytribe — Product Designer (Oct 2023 – Jul 2024 · Mumbai)</h3>
+        <ul>
+          <li>Led end-to-end product design across web and mobile, contributing to 2.5× user growth within 3 months.</li>
+          <li>Conducted and synthesized qualitative research with 100+ participants, translating insights into product strategy, onboarding, discovery, and engagement experiences.</li>
+          <li>Partnered directly with the founder, domain experts, and investors to define product direction and communicate design decisions, contributing to a ₹1.2 Cr investment round.</li>
+        </ul>
+        <h3>e-tailize — UI/UX Designer (Contract) (Jul 2023 – Sep 2023 · Mumbai)</h3>
+        <ul>
+          <li>Created a scalable UI design system from scratch (tokens, typography, components) for a B2B SaaS platform</li>
+          <li>Mapped and redesigned complex PIM workflows, reducing friction across product information management and contributing to 12% enterprise-user growth.</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>ACADEMIC PROJECT</h2>
+        <p><strong>Olo :</strong> Designed a housing platform connecting students with older homeowners through compatibility matching, trust-building and mutual value exchange. Research · Journey Mapping · UX Strategy · Prototyping · Usability Testing</p>
+        <p><strong>Orco :</strong> Reimagined ORCO’s website around ingredient transparency, recipe discovery and personalised exploration through UX and brand strategy. Awarded best project UX Research · Information Architecture · Brand Experience</p>
+      </section>
+
+      <section>
+        <h2>LANGUAGES &amp; CERTIFICATION</h2>
+        <p>English (Native) · Hindi (Native) · Italian (B1) · Google UX Design Certificate · Google AI Essentials</p>
+      </section>
+
+      <section>
+        <h2>BEHIND THE RESUME — THE HUMAN SIDE OF SAUVEER SINHA</h2>
+        <ul>
+          <li><strong>I notice the little things.</strong> I’ve been taking photos since I was 14. Somewhere along the way, I started noticing more than just what’s in front of me, little details, strange moments, and the way people interact with the world.</li>
+          <li><strong>My brain has too many tabs open.</strong> One minute it’s UX, the next it’s AI, an odd everyday object, or an idea I probably shouldn’t start at midnight. I like following those connections to see where they lead.</li>
+          <li><strong>Google is my unofficial teacher.</strong> I taught myself 3D, explored tools by breaking things, and keep learning by making. I don’t need to know everything before I start. I just need enough to give it a go.</li>
+          <li><strong>I’ve never been just one thing.</strong> Print and media, visual design, UX, 3D, emerging tech. My path hasn’t been a straight line, and I quite like that. Each discipline gives me another way to look at a problem.</li>
+          <li><strong>I like people more than pixels.</strong> I love a good conversation, shared laughs, and making people feel included. I care about the work, but I also care about the people making it with me. Good energy matters.</li>
+          <li><strong>I like ideas with a pulse.</strong> An idea is exciting. A prototype is better. Something real that people can try, react to, and make their own? That’s the bit I want to get to. I like taking things from zero to shipped.</li>
+        </ul>
+      </section>
+    </article>
+  </main>
+
+  <footer class="studio-footer">
+    <nav aria-label="Resume actions" class="controls-bar">
+      <button type="button" id="btn-turn-page" class="control-btn turn-btn">
+        <svg aria-hidden="true" viewBox="0 0 20 20" width="15" height="15" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M15 4v6h-6"/>
+          <path d="M14.5 9.5A6.5 6.5 0 1 0 15 14"/>
+        </svg>
+        <span class="btn-label">Turn Over · Human Side</span>
+      </button>
+
+      <span class="dock-divider" aria-hidden="true"></span>
+
+      <a href="./assets/Sauveer-Sinha-Resume.pdf" download="Sauveer_Sinha_UX_Product_Designer_CV.pdf" id="btn-download-cv" class="control-btn download-cta">
+        <svg aria-hidden="true" viewBox="0 0 20 20" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M10 3v9.5"/>
+          <path d="M6 9.5l4 4 4-4"/>
+          <path d="M4 16.5h12"/>
+        </svg>
+        <span class="btn-label">Download CV</span>
+      </a>
+    </nav>
+  </footer>
+
+  <script type="module" src="./app.js"></script>
+</body>
+</html>
