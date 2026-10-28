@@ -122,7 +122,7 @@ export const STICKY_NOTES_DATA = [
     stickerSubText: '#DCFAEC',
     angleDeg: -1.5,
     title: 'I’ve never been just one thing.',
-    body: 'UX, product, engineering, art direction, 3D, emerging tech. My path hasn’t been a straight line, and I quite like that. Each discipline gives me another way to look at a problem.',
+    body: 'UX, product, engineering, art direction, emerging tech. My path hasn’t been a straight line, and I quite like that. Each discipline gives me another way to look at a problem.',
   },
   {
     id: 'sticker-05',
