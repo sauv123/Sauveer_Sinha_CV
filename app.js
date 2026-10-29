@@ -1,5 +1,5 @@
 import * as THREE from './vendor/three.module.js';
-import { PaperSoundEngine } from './paper-audio.js?v=9';
+import { PaperSoundEngine } from './paper-audio.js?v=10';
 
 /**
  * Interactive 3D Physical Paper Resume with 6 Die-Cut Colored Shaped Personality Stickers
@@ -159,26 +159,26 @@ const PDF_LINKS = [
   {
     label: 'Email sauveersinha@gmail.com',
     href: 'mailto:sauveersinha@gmail.com',
-    uMin: 220.1 / 596.0,
-    uMax: 326.1 / 596.0,
-    vMin: 1.0 - 68.5 / 842.0,
-    vMax: 1.0 - 52.5 / 842.0,
+    uMin: 194.0 / 596.0,
+    uMax: 306.0 / 596.0,
+    vMin: 1.0 - 85.0 / 842.0,
+    vMax: 1.0 - 66.0 / 842.0,
   },
   {
     label: 'Visit www.sauveer.com',
     href: 'https://www.sauveer.com',
-    uMin: 332.6 / 596.0,
-    uMax: 413.3 / 596.0,
-    vMin: 1.0 - 68.5 / 842.0,
-    vMax: 1.0 - 52.5 / 842.0,
+    uMin: 307.0 / 596.0,
+    uMax: 393.0 / 596.0,
+    vMin: 1.0 - 85.0 / 842.0,
+    vMax: 1.0 - 66.0 / 842.0,
   },
   {
     label: 'Open LinkedIn profile linkedin.com/in/sauveer',
     href: 'https://linkedin.com/in/sauveer',
-    uMin: 419.5 / 596.0,
-    uMax: 518.3 / 596.0,
-    vMin: 1.0 - 68.5 / 842.0,
-    vMax: 1.0 - 52.5 / 842.0,
+    uMin: 394.0 / 596.0,
+    uMax: 498.0 / 596.0,
+    vMin: 1.0 - 85.0 / 842.0,
+    vMax: 1.0 - 66.0 / 842.0,
   },
 ];
 
